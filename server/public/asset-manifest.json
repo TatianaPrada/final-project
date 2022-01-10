@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9fa7bd33.chunk.css",
+    "main.js": "/static/js/main.f89b0be9.chunk.js",
+    "main.js.map": "/static/js/main.f89b0be9.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.b9366fb0.js",
+    "runtime-main.js.map": "/static/js/runtime-main.b9366fb0.js.map",
+    "static/css/2.7d441899.chunk.css": "/static/css/2.7d441899.chunk.css",
+    "static/js/2.242c0a25.chunk.js": "/static/js/2.242c0a25.chunk.js",
+    "static/js/2.242c0a25.chunk.js.map": "/static/js/2.242c0a25.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.7d441899.chunk.css.map": "/static/css/2.7d441899.chunk.css.map",
+    "static/css/main.9fa7bd33.chunk.css.map": "/static/css/main.9fa7bd33.chunk.css.map",
+    "static/js/2.242c0a25.chunk.js.LICENSE.txt": "/static/js/2.242c0a25.chunk.js.LICENSE.txt",
+    "static/media/Coworking.32ae804b.png": "/static/media/Coworking.32ae804b.png",
+    "static/media/Data analyse.c1a4982a.png": "/static/media/Data analyse.c1a4982a.png",
+    "static/media/Work at home.fdeab598.png": "/static/media/Work at home.fdeab598.png",
+    "static/media/calendar.ceeed6c6.png": "/static/media/calendar.ceeed6c6.png",
+    "static/media/schedule.17f5ed59.png": "/static/media/schedule.17f5ed59.png",
+    "static/media/tasks.70a440ab.png": "/static/media/tasks.70a440ab.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b9366fb0.js",
+    "static/css/2.7d441899.chunk.css",
+    "static/js/2.242c0a25.chunk.js",
+    "static/css/main.9fa7bd33.chunk.css",
+    "static/js/main.f89b0be9.chunk.js"
+  ]
+}
