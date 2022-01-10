@@ -22,7 +22,7 @@
   },
   "scripts": {
     "start": "REACT_APP_SERVER_URL=http://localhost:5000/api react-scripts --openssl-legacy-provider start",
-    "build": "REACT_APP_SERVER_URL=https://app-grouping.herokuapp.com/api react-scripts --openssl-legacy-provider build",
+    "build": "REACT_APP_SERVER_URL=https://app-grouping.herokuapp.com react-scripts --openssl-legacy-provider build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
