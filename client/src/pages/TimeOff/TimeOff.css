@@ -1,0 +1,12 @@
+.TimeOff {
+    margin-left: 3%;
+    width: 79vw;
+}
+
+@media (max-width:600px) {
+    .TimeOff {
+        margin-left: 10%;
+        max-width: 89vw;
+    }
+
+}

@@ -40,7 +40,7 @@ const TaskForm = ({ user, onSubmitSuccess }) => {
           color="secondary"
           name="task"
           id="task"
-          label="task"
+          label="Description"
           value={description}
           onChange={(event) => setDescription(event.target.value)}
           multiline
@@ -55,8 +55,9 @@ const TaskForm = ({ user, onSubmitSuccess }) => {
           color = "secondary"
           type="submit"
           onClick={onSubmit}
+          sx={{marginTop: 3}}
         >
-          Add
+          Add Task
         </Button>
         {status && <Alert severity="success">Task created!</Alert>}
         {status === false && (

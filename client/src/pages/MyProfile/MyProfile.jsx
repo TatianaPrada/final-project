@@ -15,7 +15,6 @@ const MyProfile = (props) => {
   const {_id, name, lastName, lastName2, dateOfBirth, identityCard, legalGender, phoneNumber, photo } = props.user
   
   const [error, setError] = useState(null)
-  const [message, setMessage] = useState("")
   const [loadingImage, setLoadingImage] = useState(false)
   const [status, setStatus] = useState(null)
   const {setUser} = props
@@ -44,9 +43,10 @@ const MyProfile = (props) => {
       if (!res.status) {
         return setError(res.errorMessage)
       }
-      setMessage("Your profile was updated succesfully")
+      event.preventDefault();
+      console.log(  res.data.user)
       setUser(res.data.user)
-      setStatus(res.status);
+      setStatus(true);
     });
   }
 
@@ -64,7 +64,6 @@ const MyProfile = (props) => {
 
   return (
     
-    // <ThemeProvider theme={theme}>
       <div className="MyProfile">
         <section>
           <h1 className="title">My Profile</h1>
@@ -78,7 +77,7 @@ const MyProfile = (props) => {
             <span>Fill in your personal data</span>
           </div>
           <div className="divForm">
-            <Box
+            <Box 
               sx={{
                 width: 250,
                 "& .MuiTextField-root": { m: 1, width: "25ch"}
@@ -87,10 +86,10 @@ const MyProfile = (props) => {
             >
               <form onSubmit={handleSubmission}>
               <input className="hidden" value={_id} onChange={handleInputChange}></input>
-                <Avatar
+                <Avatar className="photoBox"
                   alt="Remy Sharp"
                   src={photo}
-                  sx={{ width: 78, height: 78}}
+                  sx={{ width: 80, height: 78}}
                   variant="rounded"
                 />
                 <label>Name:</label>
@@ -203,7 +202,7 @@ const MyProfile = (props) => {
               </form>
               {status === true &&
                 <Alert severity="success">
-                {{message}}
+                Your profile was changed succesfully
                 </Alert> 
               }
               {status === false &&

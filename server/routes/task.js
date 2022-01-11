@@ -14,13 +14,6 @@ router.post("/create", isLoggedIn, async (req, res) => {
         .status(400)
         .json({ errorMessage: "Please provide a task description" });
     }
-    Task.findOne({ description }).then((found) => {
-      if (found) {
-        return res
-          .status(400)
-          .json({ errorMessage: "This task has been already created" });
-      }
-    });
 
     const newTask = await Task.create({
       description: description, user: userId
@@ -46,18 +39,16 @@ router.get("/my-tasks/:id", async (req, res) => {
   }
 });
 
-router.post("/delete", isLoggedIn, async (req, res) => {
-  const accessToken = req.headers.authorization;
-  try {
-    const session = await Session.findById(accessToken).populate("user");
-    const response = await Task.find({
-      user: { $eq: session.user._id },
-    }).populate("user");
 
-  } catch (err) {
-    console.log(err);
-    return res.status(500).json({ errorMessage: err.toString() });
+router.patch("/tasks/delete/:userId/:taskId", async (req, res) => {
+  const {userId, taskId} = req.params
+  try{
+      const userFromDB = await User.findByIdAndUpdate(userId, {$pull: {tasks: taskId}}) 
+      res.status(200).json({msg: "Changes made succesfully", user: User})
+  } catch(err){
+      console.log((err))
   }
 });
+
 
 module.exports = router;

@@ -1,0 +1,12 @@
+.Tasks {
+    margin-left: 3%;
+    width: 79vw;
+}
+
+@media (max-width:600px) {
+    .Tasks {
+        margin-left: 10%;
+        max-width: 80vw;
+    }
+
+}

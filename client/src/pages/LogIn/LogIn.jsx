@@ -9,7 +9,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import loginPicture from "../../images/Coworking.png"
 
-export default function LogIn({ authenticate }) {
+export default function LogIn({ authenticate, user }) {
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -17,6 +17,7 @@ export default function LogIn({ authenticate }) {
   const { email, password } = form;
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+  const [user1, setUser1] = useState(user)
 
   function handleInputChange(event) {
     const { name, value } = event.target;
@@ -36,7 +37,9 @@ export default function LogIn({ authenticate }) {
       }
       USER_HELPERS.setUserToken(res.data.accessToken);
       authenticate(res.data.user);
+      setUser1(res.data.user)
       navigate(PATHS.HOMEPAGE);
+      console.log(res.data.user)
     });
   }
 

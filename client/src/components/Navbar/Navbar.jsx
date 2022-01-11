@@ -16,14 +16,9 @@ import AccountCircleTwoToneIcon from "@mui/icons-material/AccountCircleTwoTone";
 import LoginTwoToneIcon from "@mui/icons-material/LoginTwoTone";
 import "./Navbar.css";
 import { Button } from "@mui/material";
-import {ListItem} from "@mui/material";
-
+import { ListItem } from "@mui/material";
 
 const Navbar = (props) => {
-  const settings = [
-    { name: "Logout", action: props.handleLogout },
-  ];
-
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenUserMenu = (event) => {
@@ -33,9 +28,13 @@ const Navbar = (props) => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-  
+
   return (
-    <AppBar position="sticky" className="Navbar" sx={{backgroundColor:"#37384E", paddingY:"2px"}}>
+    <AppBar
+      position="sticky"
+      className="Navbar"
+      sx={{ backgroundColor: "#37384E", paddingY: "2px" }}
+    >
       <Box>
         <Toolbar disableGutters>
           <IconButton
@@ -45,7 +44,7 @@ const Navbar = (props) => {
             onClick={props.handleDrawerToggle}
             sx={{ mr: 2, display: { sm: "none" } }}
           >
-           {props.user && (<MenuIcon />)}
+            {props.user && <MenuIcon />}
           </IconButton>
 
           <Typography
@@ -53,11 +52,10 @@ const Navbar = (props) => {
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: "flex" }}
-          >
-           </Typography>
+          ></Typography>
 
           {props.user ? (
-            <Box sx={{ flexGrow: 0 }}>
+            <Box sx={{ flexGrow: 0, marginRight: 3}}>
               <Tooltip title="User Menu">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                   <Avatar alt="Remy Sharp" src={props.user.photo} />
@@ -79,35 +77,41 @@ const Navbar = (props) => {
                 open={Boolean(anchorElUser)}
                 onClose={handleCloseUserMenu}
               >
-                {settings.map((setting) => (
-                  <MenuItem key={setting}>
-                    <Typography textAlign="center" onClick={setting.action}>
-                      {setting.name}
-                    </Typography>
-                  </MenuItem>
-                ))}
+                <MenuItem button component={Link} to={PATHS.MYPROFILE}>
+                  {" "}
+                  My Profile
+                </MenuItem>
+                <MenuItem>
+                  <Typography textAlign="center" onClick={props.handleLogout}>
+                    Logout
+                  </Typography>
+                </MenuItem>
               </Menu>
             </Box>
           ) : (
             <>
-            <div className="logo-div"> 
-              <ListItem to="/" className="link" component={Link} >
-                 <img src={logo} alt="grouping logo"/>
-                 <p>Grouping</p>
-              </ListItem>
-            </div>
+              <div className="logo-div">
+                <ListItem to="/" className="link" component={Link}>
+                  <img src={logo} alt="grouping logo" />
+                  <p>Grouping</p>
+                </ListItem>
+              </div>
 
               <Button
-                sx={{backgroundColor: "transparent", color: "white", mr:"1em",}}
+                sx={{
+                  backgroundColor: "transparent",
+                  color: "white",
+                  mr: "1em",
+                }}
                 component={Link}
                 to={PATHS.SIGNUPPAGE}
                 variant="contained"
               >
-               <AccountCircleTwoToneIcon />  Sign Up
+                <AccountCircleTwoToneIcon /> Sign Up
               </Button>
 
               <Button
-              sx={{ backgroundColor: "transparent", color: "white"}}
+                sx={{ backgroundColor: "transparent", color: "white" }}
                 component={Link}
                 to={PATHS.LOGINPAGE}
                 variant="contained"

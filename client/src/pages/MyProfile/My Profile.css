@@ -1,9 +1,9 @@
-My profile.css
 
 .MyProfile .title {
-    text-align: center;
+    text-align: left;
     font-size: 2em;
     margin-bottom: 20px;
+    margin-left: 3%;
 }
 
 .generalInfo{
@@ -14,16 +14,20 @@ My profile.css
     width: 30vw;
     margin-left: 5%;
 }
+.photoBox {
+    margin-bottom: 5%;
+    margin-left: 30%;
 
+}
 .generalInfo .divForm {
-    width: fit-content;
+    width: auto;
     height: fit-content;
     padding: 3% 5% 1% 5%;
     margin-right: 5%;
     margin-bottom: 3%;
     align-content: center;
     justify-content: center;
-    background-color:#D8DDEE;
+    background-color: #f5f5f5;
     border-radius: 10px;
 }
 .divForm form label {
@@ -61,11 +65,16 @@ My profile.css
 }
 
 @media (max-width:600px) {
+    .MyProfile {
+        margin-left: 35%;
+        max-width: 90vw;
+    }
     .generalInfo, .workInfo{
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
         align-content: center;
+        width: 95%;
         }
     .divInfo {
         display: flex;
@@ -84,5 +93,6 @@ My profile.css
         padding-bottom: 10%;
         margin: 2% 0 2% 3%;
         padding-right: 8%;
+        width: auto;
     }
 }

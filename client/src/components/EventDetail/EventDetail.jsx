@@ -12,7 +12,7 @@ import subDays from "date-fns/subDays";
 const EventDetail = (props) => {
   return (
     <>
-      <Card sx={{ minWidth: 300,position:"fixed"}}>
+      <Card sx={{ minWidth: 300}}>
         <CardContent>
           <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
             {props.event.start.toLocaleDateString()} -{" "}

@@ -1,0 +1,20 @@
+.clockIn .css-wnpvqa-MuiButtonBase-root-MuiButton-root{
+    margin-bottom: 5%;
+}
+
+/* .clockIn .css-pay28z-MuiDataGrid-root.MuiDataGrid-autoHeight {
+    width: 95vw;
+} */
+
+.clockIn {
+    margin-left: 3%;
+    width: 79vw;
+}
+
+@media (max-width:600px) {
+    .clockIn {
+        margin-left: 10%;
+        max-width: 89vw;
+    }
+
+}

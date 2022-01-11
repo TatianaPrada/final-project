@@ -16,12 +16,12 @@ const DrawerApp = (props) => {
 
   const drawerWidth = 240;
   const menuItems2 = [
-    { name: "Calendar", icon: "calendar_today", path: PATHS.CALENDER },
+    { name: "My Profile", icon: "manage_accounts", path: PATHS.MYPROFILE },
     { name: "Clock In", icon: "access_time", path: PATHS.ClOCKIN },
     { name: "Time Off", icon: "hail", path: PATHS.TIMEOFF },
+    { name: "Calendar", icon: "calendar_today", path: PATHS.CALENDER },
     { name: "Employees", icon: "groups", path: PATHS.EMPLOYES },
     { name: "Tasks", icon: "assignment", path: PATHS.TASKS },
-    { name: "My Profile", icon: "manage_accounts", path: PATHS.MYPROFILE },
   ];
 
   const container =

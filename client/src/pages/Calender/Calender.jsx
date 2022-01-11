@@ -53,12 +53,16 @@ const Calender = () => {
 
   return (
     <div className="Calender">
+    <div>
       <h1>Calender </h1>
+      <p>Read, approve, deny and delete all your time-off requests.</p>
+    </div>
+
       <Grid container spacing={4}>
         <Grid item xs={12} md={8}>
           <CalendarApp events={events} onEventClick={onEventClick} />
         </Grid>
-        <Grid item xs={12} md={4}>
+        <div item xs={12} md={4}>
           {selectedEvent && (
             <EventDetail
               event={selectedEvent}
@@ -69,14 +73,14 @@ const Calender = () => {
           )}
           {status && (
             <Alert severity="success">
-            Changed applied! 
+            Changes applied! 
             </Alert>
           )}
 
           {status===false && (
             <Alert severity="error">There was an error</Alert>
           )}
-        </Grid>
+        </div>
       </Grid>
     </div>
   );

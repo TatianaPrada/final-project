@@ -9,9 +9,9 @@ const Footer = (props) => {
     const style = ()=> {
       let style = {}
       if (user) {
-        style ={width:"80vw"}
+        style ={width:"82vw", maxWidth: "100vw"}
       }  else {
-        style ={width:"98vw"}
+        style ={width:"99vw"}
       }
       return style
     }
@@ -36,7 +36,7 @@ const Footer = (props) => {
 
 return (
     <footer style={style()}>
-    <div>
+    <div className="firstDiv">
         <p> © Copyright. All rights deserved.        Created and develoved by:</p>
     </div>
     <div className="links">

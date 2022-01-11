@@ -37,15 +37,15 @@ const CheckInOutTable = (props) => {
   ];
 
   return (
-    <Box sx={{ maxWidth: "650px", bgcolor: '#D8DDEE' }}>
+    <Box sx={{  minwidth: 601, maxWidth: 601, bgcolor: '#f5f5f5' }}>
       <DataGrid
         autoHeight
         disableColumnMenu
         disableSelectionOnClick
         rows={rows}
         columns={columns}
-        pageSize={5}
-        rowsPerPageOptions={[5]}
+        pageSize={10}
+        rowsPerPageOptions={[10]}
       />
     </Box>
   );

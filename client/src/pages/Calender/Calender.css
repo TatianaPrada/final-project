@@ -1,4 +1,12 @@
 .Calender {
-    padding-left: 1em;
-    margin-right: 1em;
+    margin-left: 3%;
+    width: 75vw;
+}
+
+@media (max-width:600px) {
+    .Calender {
+        margin-left: 10%;
+        max-width: 89vw;
+    }
+
 }

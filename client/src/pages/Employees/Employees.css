@@ -1,0 +1,12 @@
+.Employees {
+    margin-left: 3%;
+    width: 79vw;
+}
+
+@media (max-width:600px) {
+    .Employees {
+        margin-left: 10%;
+        max-width: 89vw;
+    }
+
+}

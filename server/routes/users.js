@@ -9,7 +9,7 @@ const isLoggedIn = require("../middleware/isLoggedIn");
 
 //PATCH ROUTE - Edit user profile by ID
 
-router.patch("/profile", isLoggedIn, async (req, res) => {
+router.patch("/profile", async (req, res) => {
     const {_id, name, lastName, lastName2, dateOfBirth, identityCard, legalGender, phoneNumber, photo} = req.body;
     try{
         const userUpdated = await User.findByIdAndUpdate(_id, req.body, {new:true})

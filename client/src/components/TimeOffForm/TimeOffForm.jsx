@@ -72,7 +72,7 @@ const TimeOffForm = ({ onSubmitSuccess }) => {
             color="secondary"
             name="summary"
             id="summary"
-            label="summary"
+            label="Description"
             value={summary}
             onChange={(event) => setSummary(event.target.value)}
             multiline
@@ -114,7 +114,7 @@ const TimeOffForm = ({ onSubmitSuccess }) => {
           )}
           {status===false && (
             <Alert severity="error">
-              There was an error!
+              Information incomplete, please try again.
             </Alert>
           )}
         </Grid>

@@ -4,6 +4,9 @@ import ModalCompany from "./../../components/ModalCompany/ModalCompany";
 import { getMyCompany, getEmployees } from "../../services/company";
 import NewEmployee from "./../../components/NewEmployee/NewEmployee";
 import EmployeesTable from "../../components/EmployeesTable/EmployeesTable";
+import CorporateFareIcon from '@mui/icons-material/CorporateFare';
+import SubtitlesIcon from '@mui/icons-material/Subtitles';
+import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 
 const Employees = (props) => {
   const [company, setCompany] = useState(props.user.companies);
@@ -46,7 +49,7 @@ const Employees = (props) => {
   }, []);
 
   return (
-    <div>
+    <div className="Employees">
       <h1>Employees</h1>
       {!company?.length && (
         <ModalCompany
@@ -57,9 +60,9 @@ const Employees = (props) => {
       )}
       {company?.length && company.map((company) => (
         <div key={company._id}>
-          <h2>{company.name}</h2>
-          <h4> Fiscal Code : {company.fiscalCode}</h4>
-          <h4> Company Email: {company.email}</h4>
+          <h2> <CorporateFareIcon sx={{color: "black"}}/> Company: {company.name}</h2>
+          <h4> <SubtitlesIcon sx={{color: "black"}}/> Fiscal Code : {company.fiscalCode}</h4>
+          <h4> <AlternateEmailIcon sx={{color: "black"}}/>  Company Email: {company.email}</h4>
           <NewEmployee
             user={props.user}
             company={company}
@@ -67,6 +70,7 @@ const Employees = (props) => {
           />
         </div>
       ))}
+      
       <EmployeesTable
         company={company}
         employees={employees}

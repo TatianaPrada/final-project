@@ -5,6 +5,7 @@ import CheckInOutTable from "../../components/CheckInOutTable/CheckInOutTable";
 import CheckOutButton from "../../components/CheckOutButton/CheckOutButton";
 import { getAllMyClocks, getMyCheckIn } from "../../services/checkInOut";
 import "./ClockIn.css";
+import QueryBuilderIcon from '@mui/icons-material/QueryBuilder';
 
 const ClockIn = () => {
   const [currentClock, setCurrentClock] = useState(null);
@@ -32,8 +33,9 @@ const ClockIn = () => {
   },[refresh]);
 
   return (
-    <div>
+    <div className="clockIn">
       <h1>Clock in</h1>
+      <h3><QueryBuilderIcon sx={{color: "black"}}/> Record your work start and end time</h3>
       {currentClock && (
         <>
           <CheckOutButton clockId={currentClock._id} setRefresh={setRefresh} />

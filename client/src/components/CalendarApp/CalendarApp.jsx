@@ -5,7 +5,6 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 const CalendarApp = (props) => {
 
   const [parsedEvents, setParsedEvents] = useState([]);
-
   useEffect(() => {
     if (!props.events) return;
     const events = props.events.map((event) => {
@@ -33,6 +32,7 @@ const CalendarApp = (props) => {
       initialView="dayGridMonth"
       events={parsedEvents}
       eventClick={props.onEventClick}
+      height={"60vh"}
     />
   );
 };
