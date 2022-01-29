@@ -42,7 +42,7 @@ router.post("/approve/:id", isLoggedIn, async (req, res) => {
   }
 });
 
-router.post("/deny/:id", isLoggedIn, async (req, res) => {
+router.post("/deny/:id", async (req, res) => {
   const id = req.params.id;
   try {
     const timeOff = await CalendarRequest.findByIdAndUpdate(id, {
@@ -55,7 +55,7 @@ router.post("/deny/:id", isLoggedIn, async (req, res) => {
   }
 });
 
-router.post("/delete/:id", isLoggedIn, async (req, res) => {
+router.post("/delete/:id", async (req, res) => {
   const id = req.params.id;
   try {
     const timeOff = await CalendarRequest.findByIdAndDelete(id,{new:true});

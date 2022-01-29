@@ -145,8 +145,8 @@ export default function Signup({ authenticate }) {
           required
       />
 
-        <Button variant="outlined" color="secondary"  onClick={handleFormSubmission} className="button_submit" type="submit">
-          Submit
+        <Button variant="outlined" sx={{ m: 2 }} color="secondary"  onClick={handleFormSubmission} className="button_submit" type="submit">
+          Create Account
         </Button>
       </form>
       {error && (

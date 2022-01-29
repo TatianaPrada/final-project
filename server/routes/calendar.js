@@ -6,7 +6,7 @@ const User = require("../models/User.model");
 
 const isLoggedIn = require("../middleware/isLoggedIn");
 
-router.get("/all-mine", isLoggedIn, async (req, res) => {
+router.get("/all-mine", async (req, res) => {
   
   const accessToken = req.headers.authorization;
   try{
@@ -19,7 +19,7 @@ router.get("/all-mine", isLoggedIn, async (req, res) => {
   }
 });
 
-router.get("/all/:companyId", isLoggedIn, async (req, res) => {
+router.get("/all/:companyId", async (req, res) => {
   const companyId = req.params.companyId;
   try{
     const companyUsers = await User.find({companies:{$eq:companyId}});

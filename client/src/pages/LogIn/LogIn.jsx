@@ -43,6 +43,24 @@ export default function LogIn({ authenticate, user }) {
     });
   }
 
+  function loginAsGuest(event) {
+    event.preventDefault();
+    const credentials = {
+      email: "jhon@smith.com",
+      password: "12345678",
+    };
+    login(credentials).then((res) => {
+      if (!res.status) {
+        return setError({ message: "Invalid credentials" });
+      }
+      USER_HELPERS.setUserToken(res.data.accessToken);
+      authenticate(res.data.user);
+      setUser1(res.data.user)
+      navigate(PATHS.HOMEPAGE);
+      console.log(res.data.user)
+    });
+  }
+
   return (
     <div className="Login">
     
@@ -51,7 +69,7 @@ export default function LogIn({ authenticate, user }) {
     <Box
         sx={{width: 250, height: 300, textAlign: 'center', '& .MuiTextField-root': { m: 1, width: '25ch' } }} autoComplete="off" >
       <form onSubmit={handleFormSubmission} className="auth__form">
-      <h1>Log In</h1>
+      <h1>Login</h1>
         <TextField id="input-email" label="Your email" variant="outlined" type="email"
           color="secondary"
           name="email"
@@ -80,10 +98,13 @@ export default function LogIn({ authenticate, user }) {
           </div>
         )}
 
-        <Button color="secondary" variant="outlined" className="button_submit" type="submit">
-          Submit
+        <Button  sx={{ m: 2 }} color="secondary" variant="outlined" className="button_submit" type="submit">
+          Login
         </Button>
       </form>
+      <Button onClick={loginAsGuest}color="secondary" variant="outlined" className="button_submit" type="submit">
+          Login as a guest
+        </Button>
     </Box>
     </div>
   );
